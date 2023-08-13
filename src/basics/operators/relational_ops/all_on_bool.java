@@ -5,6 +5,8 @@ public class all_on_bool {
         boolean x = true;
         boolean y = false;
 
+        System.out.println("x == y: "+(x==y));
+        System.out.println("x != y: "+(x!=y));
         //System.out.println("x > y: "+(x>y));
 
         System.out.println("x and y are : "+x+" and "+y);
