@@ -2,17 +2,10 @@ package classes_and_methods;
 
 public class VehicleDemo {
     public static void main(String args[]) {
-        Vehicle minivan = new Vehicle();
-        Vehicle sportscar = new Vehicle();
+        // -> Here We dynamically assigned Values to instance variables using parameterized Constructor.
+        Vehicle minivan = new Vehicle(6, 16, 18);
+        Vehicle sportscar = new Vehicle(2, 12, 12);
         double miles = 318;
-
-        /*minivan.passengers = 6;  -> Here The Data for Minivan Are automatically assigned.
-        minivan.fuelcap = 16;
-        minivan.mpg = 18;*/
-
-        sportscar.passengers = 2; //-> Here We Changed the Default Assignment.
-        sportscar.fuelcap = 12;
-        sportscar.mpg = 12;
 
         double range = minivan.range();
         double minivanfuel = minivan.fuelneeded(miles);

@@ -5,10 +5,10 @@ public class Vehicle {
     double fuelcap;
     double mpg;
 
-    Vehicle(){ //This is a Constructor Used to initialize values to a Vehicle.
-        passengers = 6;
-        fuelcap = 16;
-        mpg = 18;
+    Vehicle(int x, double y, double z){ //This is a Constructor Used to initialize values to a Vehicle.
+        passengers = x;
+        fuelcap = y;
+        mpg = z;
     }
 
     double range(){

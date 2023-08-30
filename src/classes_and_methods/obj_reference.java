@@ -2,9 +2,9 @@ package classes_and_methods;
 
 public class obj_reference {
     public static void main(String args[]) {
-        Vehicle auto = new Vehicle();
-        Vehicle x = new Vehicle();
-        Vehicle bike = new Vehicle();
+        Vehicle auto = new Vehicle(0,0,0);
+        Vehicle x = new Vehicle(0,0,0);
+        Vehicle bike = new Vehicle(0,0,0);
 
         x = auto;
 
