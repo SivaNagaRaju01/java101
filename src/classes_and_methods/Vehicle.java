@@ -9,4 +9,8 @@ public class Vehicle {
         double range = fuelcap * mpg;
         return range;
     }
+
+    double fuelneeded(double miles){
+        return miles/mpg;
+    }
 }
