@@ -6,11 +6,11 @@ public class VehicleDemo {
         Vehicle sportscar = new Vehicle();
         double miles = 318;
 
-        minivan.passengers = 6;
+        /*minivan.passengers = 6;  -> Here The Data for Minivan Are automatically assigned.
         minivan.fuelcap = 16;
-        minivan.mpg = 18;
+        minivan.mpg = 18;*/
 
-        sportscar.passengers = 2;
+        sportscar.passengers = 2; //-> Here We Changed the Default Assignment.
         sportscar.fuelcap = 12;
         sportscar.mpg = 12;
 
