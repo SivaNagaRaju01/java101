@@ -4,4 +4,9 @@ public class Vehicle {
     int passengers;
     double fuelcap;
     double mpg;
+
+    double range(){
+        double range = fuelcap * mpg;
+        return range;
+    }
 }
