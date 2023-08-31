@@ -16,9 +16,9 @@ public class irregular_array {
             }
         }
 
-        for(i=0; i<ar.length; i++){
-            for(j=0; j<ar[i].length; j++){
-                System.out.print(ar[i][j]+" ");
+        for(int x[]: ar){
+            for(int y: x){
+                System.out.print(y+" ");
             }
             System.out.println();
         }
