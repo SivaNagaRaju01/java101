@@ -3,8 +3,8 @@ package basics.textbook_exe;
 import java.io.IOException;
 
 class Queue{
-    char[] q;
-    int putloc, getloc;
+    private char[] q;
+    private int putloc, getloc;
 
     Queue(int size){
         q = new char[size];
@@ -13,21 +13,18 @@ class Queue{
     }
 
     void put(char ch){
-        if(putloc == q.length-1){
+        if(putloc == q.length){
             System.out.println("Queue is Full...!");
             return;
         }
         q[putloc++] = ch;
-        if(putloc == 1 & getloc == q.length){
-            getloc = 0;
-        }
     }
 
     char get(){
-        if(getloc == q.length){
-            System.out.println("Queue is Empty...!");
-            putloc = 0;
-            return (char) 0;
+        if(getloc == putloc){
+            System.out.println("\nQueue is Empty...!");
+            putloc = getloc = 0;
+            return '\t';
         }
 
         return q[getloc++];
@@ -40,7 +37,8 @@ public class QDemo {
         for(;;){
             System.out.println("\t\t*****Menu*****");
             System.out.println("[1]. Insert a Character into Queue...");
-            System.out.println("[2]. Retreive a Character From Queue...");
+            System.out.println("[2]. Retreive Elements From Queue...");
+            System.out.println("[ ]. Any Key to Quit...");
             System.out.print("Choose An Option: ");
             int opt = System.in.read() - (int)'0';
             System.in.read();
@@ -52,7 +50,12 @@ public class QDemo {
                         System.in.read();
                         q.put((char)n);
                 break;
-                case 2: System.out.println(q.get());
+                case 2: char ch = '0';
+                        while(ch != '\t'){
+                            ch = q.get();
+                            System.out.print(ch+" ");
+                        }
+                        System.out.println();
                 break;
                 default : System.out.println("Terminating....!"); 
                         System.exit(0);
