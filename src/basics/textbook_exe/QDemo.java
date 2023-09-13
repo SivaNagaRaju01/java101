@@ -5,6 +5,11 @@ import java.io.IOException;
 class Queue{
     private char[] q;
     private int putloc, getloc;
+    
+    /* By Modifying access of Queue Members to Private
+     * We can prevent unauthorized access from any members of other classes.
+     * Which also preservers Queue Functionality.
+    */
 
     Queue(int size){
         q = new char[size];
