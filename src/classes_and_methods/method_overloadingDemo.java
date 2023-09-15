@@ -24,20 +24,31 @@ class overloadedMethods {
         }
         System.out.println("\b\b]");
     }
+
+    void display(int x){
+        System.out.println(x+" is the Only Integer");
+    }
 }
 
 public class method_overloadingDemo {
     public static void main(String args[]) {
         overloadedMethods om = new overloadedMethods();
         int[] x = new int[10];
+        //short[] b = new short[10];
+        byte b = 10;
+        char ch = '&';
 
-        for(int i=0; i<10; i++) {
+        for(short i=0; i<10; i++) {
             x[i] = i*2 + 10;
+            //b[i] = i;
         }
 
         om.display();
         om.display("Siva Naga Raju");
         om.display(x);
         om.display(x, "The Array");
+        //om.display(b, "The Byte Array"); -> Doesn't Work for Object.
+        om.display(b);
+        om.display(ch);
     }
 }
