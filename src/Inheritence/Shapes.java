@@ -4,6 +4,11 @@ class TwoDShape {
     double width;
     double height;
 
+    TwoDShape(double w, double h) {
+        width = w;
+        height = h;
+    }
+
     void showDim() {
         System.out.println("Width and Height are: "+width+" and "+height);
     }
@@ -13,9 +18,8 @@ class Triangle extends TwoDShape {
     String style;
 
     Triangle(String str, double x, double y){
+        super(x,y);
         style = str;
-        width = x;
-        height = y;
     }
 
     double area(){
@@ -29,8 +33,7 @@ class Triangle extends TwoDShape {
 
 class Square extends TwoDShape {
     Square(double x, double y){
-        width = x;
-        height = y;
+        super(x,y);
     }
 
     void area(){
