@@ -9,6 +9,14 @@ class TwoDShape {
         height = h;
     }
 
+    TwoDShape(double x) {
+        width = height = x;
+    }
+
+    TwoDShape() {
+        width = height = 0.0;
+    }
+
     void showDim() {
         System.out.println("Width and Height are: "+width+" and "+height);
     }
@@ -20,6 +28,16 @@ class Triangle extends TwoDShape {
     Triangle(String str, double x, double y){
         super(x,y);
         style = str;
+    }
+
+    Triangle(double x) {
+        super(x);
+        style = null;
+    }
+
+    Triangle() {
+        super();
+        style = "UnIdentified";
     }
 
     double area(){
@@ -45,6 +63,8 @@ public class Shapes {
     public static void main(String args[]) {
         Triangle t1 = new Triangle("Filled", 4.0, 5.0);
         Triangle t2 = new Triangle("Outlined", 10.5, 6.2);
+        Triangle t3 = new Triangle();
+        Triangle t4 = new Triangle(12.1);
         Square s1 = new Square(10.5, 3.6);
 
         System.out.println("Info For t1: ");
@@ -58,6 +78,20 @@ public class Shapes {
         t2.showStyle();
         t2.showDim();
         System.out.println("Area is: "+t2.area());
+
+        System.out.println();
+
+        System.out.println("Info For t3: ");
+        t3.showStyle();
+        t3.showDim();
+        System.out.println("Area is : "+t3.area());
+
+        System.out.println();
+
+        System.out.println("Info For t4: ");
+        t4.showStyle();
+        t4.showDim();
+        System.out.println("Area is : "+t4.area());
 
         System.out.println();
 
