@@ -49,6 +49,22 @@ class Triangle extends TwoDShape {
     }
 }
 
+class ColoredTriangle extends Triangle {
+    private String color;
+
+    ColoredTriangle(String c, String s, double w, double h) {
+        super(s, w, h);
+
+        color = c;
+    }
+
+    String getColor() { return color; }
+
+    void showColor() {
+        System.out.println("Color is "+color);
+    }
+}
+
 class Square extends TwoDShape {
     Square(double x, double y){
         super(x,y);
@@ -66,6 +82,7 @@ public class Shapes {
         Triangle t3 = new Triangle();
         Triangle t4 = new Triangle(12.1);
         Square s1 = new Square(10.5, 3.6);
+        ColoredTriangle c1 = new ColoredTriangle("Red", "Controlled", 23.5, 11.1);
 
         System.out.println("Info For t1: ");
         t1.showStyle();
@@ -98,5 +115,12 @@ public class Shapes {
         System.out.println("Info For s1: ");
         s1.showDim();
         s1.area();
+
+        System.out.println();
+
+        System.out.println("Info For c1: ");
+        c1.showStyle();
+        c1.showDim();
+        System.out.println("Area is : "+c1.area());
     }
 }
