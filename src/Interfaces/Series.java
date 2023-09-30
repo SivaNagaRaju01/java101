@@ -38,3 +38,27 @@ class ByTwos implements Series {
         return prev;
     }
 }
+
+class ByThree implements Series {
+    int start;
+    int val;
+
+    ByThree() {
+        start = 0;
+        val = 0;
+    }
+
+    public int getNext() {
+        val += 3;
+        return val;
+    }
+
+    public void reset() {
+        val = start;
+    }
+
+    public void setStart(int x) {
+        start = x;
+        val = x;
+    }
+}
