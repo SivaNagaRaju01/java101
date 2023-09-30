@@ -1,29 +1,43 @@
 package Inheritence;
 
 class TwoDShape {
-    double width;
-    double height;
+    private double width;
+    private double height;
+    private String name;
 
-    TwoDShape(double w, double h) {
+    TwoDShape(double w, double h, String n) {
         width = w;
         height = h;
+        name = n;
     }
 
-    TwoDShape(double x) {
+    TwoDShape(double x, String n) {
         width = height = x;
+        name = n;
     }
 
     TwoDShape() {
         width = height = 0.0;
+        name = "none";
     }
 
     TwoDShape(TwoDShape ob){
         width = ob.width;
         height = ob.height;
+        name = ob.name;
     }
+
+    double getWidth() { return width; }
+    double getHeight() { return height; }
+    String getName() { return name; }
 
     void showDim() {
         System.out.println("Width and Height are: "+width+" and "+height);
+    }
+
+    double area() {
+        System.out.println("area() must be Overriden...!");
+        return 0.0;
     }
 }
 
@@ -31,12 +45,12 @@ class Triangle extends TwoDShape {
     String style;
 
     Triangle(String str, double x, double y){
-        super(x,y);
+        super(x,y,"Triangle");
         style = str;
     }
 
     Triangle(double x) {
-        super(x);
+        super(x, "Triangle");
         style = null;
     }
 
@@ -51,7 +65,7 @@ class Triangle extends TwoDShape {
     }
 
     double area(){
-        return width * height / 2;
+        return getWidth() * getHeight() / 2;
     }
 
     void showStyle() {
@@ -75,13 +89,30 @@ class ColoredTriangle extends Triangle {
     }
 }
 
-class Square extends TwoDShape {
-    Square(double x, double y){
-        super(x,y);
+class Rectangle extends TwoDShape {
+    Rectangle(double x, double y) {
+        super(x,y,"Rectangle");
     }
 
-    void area(){
-        System.out.println("Area is: "+width*height);
+    Rectangle(double x) {
+        super(x, "Square");
+    }
+
+    Rectangle() {
+        super();
+    }
+
+    Rectangle(Rectangle ob) {
+        super(ob);
+    }
+
+    boolean isSquare() {
+        if(getWidth() == getHeight()) return true;
+        return false;
+    }
+
+    double area(){
+        return getWidth() * getHeight();
     }
 }
 
@@ -92,7 +123,7 @@ public class Shapes {
         Triangle t3 = new Triangle();
         Triangle t4 = new Triangle(12.1);
 
-        Square s1 = new Square(10.5, 3.6);
+        Rectangle s1 = new Rectangle(10.5, 3.6);
         ColoredTriangle c1 = new ColoredTriangle("Red", "Controlled", 23.5, 11.1);
 
         System.out.println("Info For t1: ");
