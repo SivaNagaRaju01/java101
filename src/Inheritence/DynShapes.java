@@ -8,7 +8,7 @@ public class DynShapes {
         shapes[1] = new Rectangle(10);
         shapes[2] = new Rectangle(8.5, 6.8);
         shapes[3] = new Triangle(7.0);
-        shapes[4] = new TwoDShape();
+        shapes[4] = new Triangle();
 
         for(int i=0; i<5; i++) {
             System.out.println("Object is "+ shapes[i].getName());

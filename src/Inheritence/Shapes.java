@@ -1,6 +1,6 @@
 package Inheritence;
 
-class TwoDShape {
+abstract class TwoDShape {
     private double width;
     private double height;
     private String name;
@@ -35,10 +35,7 @@ class TwoDShape {
         System.out.println("Width and Height are: "+width+" and "+height);
     }
 
-    double area() {
-        System.out.println("area() must be Overriden...!");
-        return 0.0;
-    }
+    abstract double area();
 }
 
 class Triangle extends TwoDShape {
