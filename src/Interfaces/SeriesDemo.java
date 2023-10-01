@@ -19,5 +19,14 @@ public class SeriesDemo {
         for(int i=0; i<5; i++) {
             System.out.println("Next value is " + ob.getNext());
         }
+
+        int[] x = ob.getNextArray(10);
+
+        System.out.print("Next[10]: ");
+
+        for(int i: x){
+            System.out.print(i+" ");
+        }
+        System.out.println("\b");
     }
 }
