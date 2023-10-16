@@ -10,7 +10,10 @@ public class Read {
         int x;
 
         x = Integer.parseInt(br.readLine());
+        br.close();
+        ir.close();
 
         return x;
+
     }
 }
