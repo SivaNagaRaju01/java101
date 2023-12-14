@@ -31,7 +31,6 @@ public class subsets {
 
         while(p<n) {
             z = n-1;
-            w = 2;
             q = 0;
             r = 0;
             while(q<Math.pow(2, z)) {
@@ -45,6 +44,7 @@ public class subsets {
                     }
                 }else {
                     v = p;
+                    w = 2;
                     while(r < w) {
                         sets[u] += String.valueOf(x[v]);
                         v++;
@@ -54,7 +54,6 @@ public class subsets {
                 q++;
                 u++;
                 p++;
-
             }
         }
     }
