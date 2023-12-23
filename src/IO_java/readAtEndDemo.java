@@ -5,14 +5,15 @@ import java.io.IOException;
 
 public class readAtEndDemo {
     public static void main(String args[])throws IOException {
-        ArrayList<Integer> al = new ArrayList<>();
+        ArrayList<Character> al = new ArrayList<>();
         System.out.print("Enter a String: ");
-        al.add(System.in.read());
+        al.add((char)System.in.read());
         int i = 0;
-        while(al.get(i) != -1) {
-           al.add(System.in.read());
+        while(al.get(i) != 13) {
+           al.add((char)System.in.read());
            i++;
         }
+        al.remove(i);
         System.out.println("\n"+al);
     }
 }
