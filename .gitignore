@@ -1,5 +1,6 @@
 # ignore all bin/*.class files
 bin/*
+*.class
 
 # ignore all folder within Exam
 src/Exam/*
