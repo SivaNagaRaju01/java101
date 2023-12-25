@@ -7,9 +7,7 @@ import java.io.IOException;
 
 public class TryWithResourceDemo {
     public static void main(String args[]) {
-        FileOutputStream fout = null;
-        try(FileInputStream fin = new FileInputStream("src/IO_java/TEXT1.txt")) {
-            fout = new FileOutputStream("src/IO_java/TEXT.txt");
+        try(FileInputStream fin = new FileInputStream("src/IO_java/TEXT1.txt"); FileOutputStream fout = new FileOutputStream("src/IO_java/TEXT2.txt");) {
             int i;
 
             do {
@@ -21,12 +19,6 @@ public class TryWithResourceDemo {
             System.out.println("File Not Found.");
         }catch(IOException ioe) {
             System.out.println("Error Reading File.");
-        }finally {
-            try {
-                if(fout != null) fout.close();
-            }catch(IOException ioe) {
-                System.out.println("Error closing File.");
-            }
         }
     }
 }
