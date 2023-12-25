@@ -4,3 +4,6 @@ bin/*
 
 # ignore all folder within Exam
 src/Exam/*
+
+# ignore all text files.
+*.txt
