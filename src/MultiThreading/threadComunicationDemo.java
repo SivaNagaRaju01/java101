@@ -4,12 +4,6 @@ class ticktock {
     String state = "tocked";
 
     synchronized void tick(boolean running) {
-        if(!running) {
-            state = "ticked";
-            notify();
-            return;
-        }
-
         try {
             if(!state.equals("tocked")) {
                 wait();
@@ -25,12 +19,6 @@ class ticktock {
     }
 
     synchronized void tock(boolean running) {
-        if(!running) {
-            state = "tocked";
-            notify();
-            return;
-        }
-
         try {
             while(!state.equals("ticked")) {
                 wait();
@@ -64,11 +52,9 @@ class createTickTockThread implements Runnable {
         System.out.println("In Thread: "+thrd.getName());
         if(thrd.getName() == "Tick") {
             for(int i=0; i<5; i++)ttob.tick(true);
-            ttob.tick(false);
         }
         else {
             for(int i=0; i<5; i++) ttob.tock(true);
-            ttob.tock(false);
         }
     }
 }
